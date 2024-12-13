@@ -10,10 +10,12 @@ additional_hostnames:
     - d10
 additional_fqdns: []
 database:
-    type: mariadb
-    version: "10.6"
+  type: mariadb
+  version: "10.6"
 use_dns_when_possible: true
 composer_version: "2"
+nodejs_version: "22"
+corepack_enable: true
 web_environment:
     - SIMPLETEST_DB=mysql://db:db@db/db
     - DRUPAL_NIGHTWATCH_OUTPUT=reports/nightwatch
@@ -32,8 +34,6 @@ web_environment:
     - MINK_DRIVER_ARGS_WEBDRIVER=[\"chrome\", {\"browserName\":\"chrome\",\"goog:chromeOptions\":{\"w3c\":false,\"args\":[\"--disable-gpu\",\"--headless\", \"--no-sandbox\", \"--disable-dev-shm-usage\"]}}, \"http://selenium-chrome:4444/wd/hub\"]
     - DRUPAL_TEST_BASE_URL=http://web
     - DRUPAL_NIGHTWATCH_IGNORE_DIRECTORIES=node_modules,vendor,.*,sites/*/files,sites/*/private,sites/simpletest
-nodejs_version: "18"
-corepack_enable: false
 
 # Key features of DDEV's config.yaml:
 
